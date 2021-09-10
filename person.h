@@ -10,13 +10,6 @@ class Person{
         Person();
         Person(std::string name, Account acc);
         Person(const Person &other);//copy constructor
-        // Person &operator=(const Person &other){
-        //     if (&other != this){  //avoid self assignment 
-        //         Person p = Person(other.name, other.acc);
-        //         return p;
-        //     }
-        //     return (*this);
-        // }; 
         ~Person();
         friend std::ostream& operator<< (std::ostream& os, const Person& Person);
 
