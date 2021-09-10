@@ -10,7 +10,7 @@ class Account{
     public:
         Account();
         template<typename T> T add_currency(int value, T type);
-        template<typename T> T print_currency(int value, T type);
+        void print_currency();
 
         std::vector<Currency*> currencies; //pointer to array of currency objects
 

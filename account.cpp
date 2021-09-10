@@ -16,12 +16,10 @@ T Account::add_currency(int value, T type){
         
 }
 
-
-template<typename T> 
-T Account::print_currency(int value, T type){
+void Account::print_currency(){
        
     for (std::vector<Currency*>::iterator itr = currencies.begin(); itr != currencies.end(); ++itr){
-        std::cout<< *itr <<std::endl;
+        std::cout<< (*itr)->get_value() <<std::endl;
     }
         
 }

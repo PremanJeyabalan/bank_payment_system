@@ -12,6 +12,6 @@ int main(){
 
     USD* usd_10 = new USD(10);
     gay.currencies.push_back(usd_10);
-
+    gay.print_currency();
     return 0;
 };
