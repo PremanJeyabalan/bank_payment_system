@@ -1,5 +1,6 @@
 #include "account.h"
 #include "person.h"
+#include "vector"
 #include "currency.h"
 
 using namespace std;
@@ -7,7 +8,10 @@ using namespace std;
 int main(){
     cout << "Cocks" << endl;
 
+    Account gay = Account();
 
+    USD* usd_10 = new USD(10);
+    gay.currencies.push_back(usd_10);
 
-    return 0 ;
+    return 0;
 };

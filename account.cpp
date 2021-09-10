@@ -1,4 +1,6 @@
 #include "account.h"
+#include "currency.h"
+#include <vector>
 #include <string> 
 
 Account::Account(){
@@ -6,19 +8,20 @@ Account::Account(){
 };
 
 template<typename T> 
-T add_currency(int value, T type){
-    std::vector<Currency*> iterator;   
-    for (iterator = currencies.begin(); iterator != currencies.end(); ++iterator){
-        if (!strcmp(typeid(iterator), typeid(USD)) && !strcmp(typeid(iterator), typeid(type))  ){
-            *iterator += value; 
-        }
-        else if (!strcmp(typeid(iterator), typeid(HKD)) && !strcmp(typeid(iterator), typeid(type))  ){
-            *iterator += value; 
-        }
-        else{
-            currencies.pushback(T(value));
-        }
+T Account::add_currency(int value, T type){
+    std::vector<Currency*>::iterator itr;   
+    for (itr = currencies.begin(); itr != currencies.end(); ++itr){
+        std::cout << typeid(*itr).name() << std::endl;
     }
-     
+        
 }
 
+
+template<typename T> 
+T Account::print_currency(int value, T type){
+       
+    for (std::vector<Currency*>::iterator itr = currencies.begin(); itr != currencies.end(); ++itr){
+        std::cout<< *itr <<std::endl;
+    }
+        
+}
