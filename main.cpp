@@ -6,20 +6,20 @@
 using namespace std;
 
 int main(){
-    Account gay = Account();
+    Account account_1 = Account();
+    account_1.add_currency(USD(20));
+    account_1.add_currency(USD(30));
 
-    // USD* usd_10 = new USD(10);
-    // gay.currencies.push_back(usd_10);
+    account_1.print_currency();
 
-    USD* usd_20 = new USD(20);
-    gay.add_currency(usd_20);
-    USD* usd_30 = new USD(30);
-    gay.add_currency(usd_30);
+    Account account_2 = Account();
+    account_2.add_currency(USD(20));
 
-    HKD* hkd_10 = new HKD(10);
-    gay.add_currency(hkd_10);
-    
-    gay.print_currency();
+    account_2.print_currency();
+
+    account_1.transfer_currency(account_2, USD(40));
+    account_1.print_currency();
+    account_2.print_currency();
 
     return 0;
 };

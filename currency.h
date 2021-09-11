@@ -7,6 +7,7 @@ class Currency {
         int value;
     public:
         Currency(int value) : value(value) {}; 
+        const int get_value_const() {return value;} ;
         int& get_value() {return value; } ; 
         void change_value(int val) {value = val ; }
         virtual std::string name() const { return typeid(*this).name(); }
